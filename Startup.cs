@@ -81,6 +81,17 @@ namespace AnkrProxy
                         Path = "/walletsolidity/{**catch-all}"
                     }
                 }
+                ,
+                new RouteConfig()
+                {
+                    RouteId = "route" + Random.Shared.Next(), // Forces a new route id each time GetRoutes is called.
+                    ClusterId = "bttc-mainnet-archive-rpc",
+                    Match = new RouteMatch
+                    {
+                        // Path or Hosts are required for each route. This catch-all pattern matches all request paths.
+                        Path = "/bttc-mainnet-archive-rpc/{**catch-all}"
+                    }
+                }
             };
         }
         private ClusterConfig[] GetClusters()

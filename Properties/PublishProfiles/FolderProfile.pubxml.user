@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\peter\Source\Repos\AnkrProxy\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2022-06-17T13:00:12.7854332Z;True|2022-06-17T13:12:57.9487425+01:00;</History>
+    <History>True|2022-06-17T22:20:53.6584592Z;True|2022-06-17T21:33:46.2142993+01:00;True|2022-06-17T14:00:12.7854332+01:00;True|2022-06-17T13:12:57.9487425+01:00;</History>
   </PropertyGroup>
 </Project>
