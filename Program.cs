@@ -25,9 +25,9 @@ var routes = new[]
         Match = new RouteMatch
         {
             // Path or Hosts are required for each route. This catch-all pattern matches all request paths.
-            Path = "/tron-mainnet-archive-solidity-rpc/walletsolidity/{**catch-all}"
+            Path = "/tron-mainnet-archive-rpc/walletsolidity/{**catch-all}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/tron-mainnet-archive-solidity-rpc"),
+    }.WithTransformPathRemovePrefix(prefix: "/tron-mainnet-archive-rpc"),
     new RouteConfig()
     {
         RouteId = "route" + Random.Shared.Next(), // Forces a new route id each time GetRoutes is called.
