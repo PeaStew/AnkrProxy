@@ -94,8 +94,6 @@ namespace AnkrProxy
                     Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
                     {
                         { "node1", new DestinationConfig() { Address = "http://localhost:22311/" } },
-                        //{ "node1", new DestinationConfig() { Address = "https://singapore-inap-117-20-40-85.ankr.com/tron_mainnet_archive_rpc/" } }
-                        //{ "node1", new DestinationConfig() { Address = "http://singapore-inap-117-20-40-85.ankr.com:22311/" } }
                     }
                 },
                 new ClusterConfig()
@@ -105,38 +103,9 @@ namespace AnkrProxy
                     Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
                     {
                         { "node1", new DestinationConfig() { Address = "http://localhost:22312/" } }
-                        //{ "node1", new DestinationConfig() { Address = "http://singapore-inap-117-20-40-85.ankr.com/tron_mainnet_archive_solidity_rpc/" } }
-                        //{ "node1", new DestinationConfig() { Address = "http://singapore-inap-117-20-40-85.ankr.com:22312/" } }
                     }
                 }
             };
-        }
-
-
-        /// <summary>
-        /// Custom proxy step that filters destinations based on a header in the inbound request
-        /// Looks at each destination metadata, and filters in/out based on their debug flag and the inbound header
-        /// </summary>
-        public Task MyCustomProxyStep(HttpContext context, Func<Task> next)
-        {
-            // Can read data from the request via the context
-            //var useDebugDestinations = context.Request.Headers.TryGetValue(DEBUG_HEADER, out var headerValues) && headerValues.Count == 1 && headerValues[0] == DEBUG_VALUE;
-
-            // The context also stores a ReverseProxyFeature which holds proxy specific data such as the cluster, route and destinations
-            var availableDestinationsFeature = context.Features.Get<IReverseProxyFeature>();
-            var filteredDestinations = new List<DestinationState>();
-
-            // Filter destinations based on criteria
-            foreach (var d in availableDestinationsFeature.AvailableDestinations)
-            {
-                //Todo: Replace with a lookup of metadata - but not currently exposed correctly here
-                //if (d.DestinationId.Contains("debug") == useDebugDestinations)
-                //{ filteredDestinations.Add(d); }
-            }
-            availableDestinationsFeature.AvailableDestinations = filteredDestinations;
-
-            // Important - required to move to the next step in the proxy pipeline
-            return next();
         }
     }
 }
