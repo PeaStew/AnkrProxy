@@ -1,0 +1,5 @@
+C:\Users\peter\Source\Repos\AnkrProxy\obj\Release\net6.0\linux-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\peter\Source\Repos\AnkrProxy\obj\Release\net6.0\linux-x64\PubTmp\Out\appsettings.json
+C:\Users\peter\Source\Repos\AnkrProxy\obj\Release\net6.0\linux-x64\PubTmp\Out\AnkrProxy.pdb
+C:\Users\peter\Source\Repos\AnkrProxy\obj\Release\net6.0\linux-x64\PubTmp\Out\Yarp.ReverseProxy.xml
+C:\Users\peter\Source\Repos\AnkrProxy\obj\Release\net6.0\linux-x64\PubTmp\Out\AnkrProxy

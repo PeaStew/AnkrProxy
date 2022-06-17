@@ -1,0 +1,37 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/linux-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/linux-x64": {
+      "AnkrProxy/1.0.0": {
+        "dependencies": {
+          "Yarp.ReverseProxy": "2.0.0-dev"
+        },
+        "runtime": {
+          "AnkrProxy.dll": {}
+        }
+      },
+      "Yarp.ReverseProxy/2.0.0-dev": {
+        "runtime": {
+          "Yarp.ReverseProxy.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AnkrProxy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Yarp.ReverseProxy/2.0.0-dev": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

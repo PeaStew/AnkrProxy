@@ -22,4 +22,3 @@ C:\Users\peter\Source\Repos\AnkrProxy\obj\Debug\net6.0\AnkrProxy.pdb
 C:\Users\peter\Source\Repos\AnkrProxy\obj\Debug\net6.0\AnkrProxy.genruntimeconfig.cache
 C:\Users\peter\Source\Repos\AnkrProxy\obj\Debug\net6.0\ref\AnkrProxy.dll
 C:\Users\peter\Source\Repos\AnkrProxy\bin\Debug\net6.0\Yarp.ReverseProxy.xml
-C:\Users\peter\Source\Repos\AnkrProxy\bin\Debug\net6.0\libman.json

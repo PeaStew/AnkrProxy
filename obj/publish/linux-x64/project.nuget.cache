@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2AqzkDxQ3Xt5/zCJ66qOyMrWJfKCdtb59Uv1rPALkrYZOfu6X5XsXW9UbCV4DMqbK+tzr49ZOaZS1/RSI18Rbw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.5\\microsoft.netcore.app.host.linux-x64.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
