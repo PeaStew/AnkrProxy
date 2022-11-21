@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnkrProxy", "AnkrProxy.csproj", "{EA069681-78A3-4CC1-A0EA-66AD6581A250}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yarp.ReverseProxy", "..\reverse-proxy\src\ReverseProxy\Yarp.ReverseProxy.csproj", "{E67E95D1-5ECB-42B8-AC09-0B589120496C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{EA069681-78A3-4CC1-A0EA-66AD6581A250}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA069681-78A3-4CC1-A0EA-66AD6581A250}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA069681-78A3-4CC1-A0EA-66AD6581A250}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E67E95D1-5ECB-42B8-AC09-0B589120496C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E67E95D1-5ECB-42B8-AC09-0B589120496C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E67E95D1-5ECB-42B8-AC09-0B589120496C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E67E95D1-5ECB-42B8-AC09-0B589120496C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

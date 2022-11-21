@@ -1,15 +1,18 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "Yarp.ReverseProxy/2.0.0-dev": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+    "net7.0": {
+      "Yarp.ReverseProxy/1.1.1": {
+        "type": "package",
         "compile": {
-          "bin/placeholder/Yarp.ReverseProxy.dll": {}
+          "lib/net6.0/Yarp.ReverseProxy.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "bin/placeholder/Yarp.ReverseProxy.dll": {}
+          "lib/net6.0/Yarp.ReverseProxy.dll": {
+            "related": ".xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -18,15 +21,28 @@
     }
   },
   "libraries": {
-    "Yarp.ReverseProxy/2.0.0-dev": {
-      "type": "project",
-      "path": "../reverse-proxy/src/ReverseProxy/Yarp.ReverseProxy.csproj",
-      "msbuildProject": "../reverse-proxy/src/ReverseProxy/Yarp.ReverseProxy.csproj"
+    "Yarp.ReverseProxy/1.1.1": {
+      "sha512": "wR7xCSrej/i7IeN7WmT+0fb6J6Uyf1WV2TVtzqyOuzSG9rHuCRdVHe720/+OqfW5a0IDTXu7LdAkILPKrkmIVw==",
+      "type": "package",
+      "path": "yarp.reverseproxy/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net5.0/Yarp.ReverseProxy.dll",
+        "lib/net5.0/Yarp.ReverseProxy.xml",
+        "lib/net6.0/Yarp.ReverseProxy.dll",
+        "lib/net6.0/Yarp.ReverseProxy.xml",
+        "lib/netcoreapp3.1/Yarp.ReverseProxy.dll",
+        "lib/netcoreapp3.1/Yarp.ReverseProxy.xml",
+        "yarp.reverseproxy.1.1.1.nupkg.sha512",
+        "yarp.reverseproxy.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "Yarp.ReverseProxy >= 2.0.0-dev"
+    "net7.0": [
+      "Yarp.ReverseProxy >= 1.1.1"
     ]
   },
   "packageFolders": {
@@ -51,21 +67,18 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\peter\\Source\\Repos\\reverse-proxy\\src\\ReverseProxy\\Yarp.ReverseProxy.csproj": {
-              "projectPath": "C:\\Users\\peter\\Source\\Repos\\reverse-proxy\\src\\ReverseProxy\\Yarp.ReverseProxy.csproj"
-            }
-          }
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -75,15 +88,22 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "dependencies": {
+          "Yarp.ReverseProxy": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -95,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.1.22431.12\\RuntimeIdentifierGraph.json"
       }
     }
   }

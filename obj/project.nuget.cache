@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Q5jlGhV7EiX9DGa/H4nNy6MkrVpWfMcskFTrRzV6n/8JK2HjQ8E0rObO7tlO0JO54J7p7KDD6NEZG4cqbq2i9Q==",
+  "dgSpecHash": "PweMM2siiZP4b+39lgQul8bojN/8973JBEg9TUGtjrau1u3s1oSlNVTdIpzCVUsXyCL3mP39of50xprwDE/X/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\peter\\.nuget\\packages\\yarp.reverseproxy\\1.1.1\\yarp.reverseproxy.1.1.1.nupkg.sha512"
+  ],
   "logs": []
 }

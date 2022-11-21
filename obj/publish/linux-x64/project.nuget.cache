@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "s30p7zy96YQthEzHAuvhGC5b9RqYWT0r+0dYENmKADfzJUdya6dI8gLyboxYIL9PHv9H8QERixHp6S9Ihu53CQ==",
+  "dgSpecHash": "ngiZMlp3BS6vo4W9mUYqVVTDY5eKUj9dafx3A4mWcYmVsqkJUszBwzGelR/AKp/MrtJdubvIqWRpyE/6YFl1Nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\peter\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.5\\microsoft.netcore.app.runtime.linux-x64.6.0.5.nupkg.sha512",
-    "C:\\Users\\peter\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.5\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.5.nupkg.sha512",
-    "C:\\Users\\peter\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.5\\microsoft.netcore.app.host.linux-x64.6.0.5.nupkg.sha512"
+    "C:\\Users\\peter\\.nuget\\packages\\yarp.reverseproxy\\1.1.1\\yarp.reverseproxy.1.1.1.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\7.0.0-preview.5.22301.12\\microsoft.netcore.app.runtime.linux-x64.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\7.0.0-preview.5.22301.12\\microsoft.netcore.app.host.linux-x64.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\7.0.0-preview.5.22303.8\\microsoft.aspnetcore.app.runtime.linux-x64.7.0.0-preview.5.22303.8.nupkg.sha512"
   ],
   "logs": []
 }

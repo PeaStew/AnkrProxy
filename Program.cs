@@ -1,51 +1,146 @@
 using System.Collections.ObjectModel;
-using System.Net;using System.Runtime.CompilerServices;
+using System.Net;
+using System.Runtime.CompilerServices;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Yarp.ReverseProxy.Configuration;
+using Yarp.ReverseProxy.Model;
 using Yarp.ReverseProxy.Transforms;
 
 var builder = WebApplication.CreateBuilder(args);
-var transform = new Dictionary<string, string>();
 
 var routes = new[]
 {
+    //Tron
     new RouteConfig()
     {
-        RouteId = "route" + Random.Shared.Next(), // Forces a new route id each time GetRoutes is called.
-        ClusterId = "tron-mainnet-archive-rpc",
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "tron_mainnet_archive_rpc",
         Match = new RouteMatch
         {
-            Path = "/tron-mainnet-archive-rpc/wallet/{**catch-all}"
+            Path = "/tron_mainnet_archive_rpc/wallet/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/tron-mainnet-archive-rpc"),
+    }.WithTransformPathRemovePrefix(prefix: "/tron_mainnet_archive_rpc"),
     new RouteConfig()
     {
-        RouteId = "route" + Random.Shared.Next(), // Forces a new route id each time GetRoutes is called.
-        ClusterId = "tron-mainnet-archive-solidity-rpc",
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "tron_mainnet_archive_solidity_rpc",
         Match = new RouteMatch
         {
-            // Path or Hosts are required for each route. This catch-all pattern matches all request paths.
-            Path = "/tron-mainnet-archive-rpc/walletsolidity/{**catch-all}"
+            Path = "/tron_mainnet_archive_rpc/walletsolidity/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/tron-mainnet-archive-rpc"),
+    }.WithTransformPathRemovePrefix(prefix: "/tron_mainnet_archive_rpc"),
+    //BTTC FULL
     new RouteConfig()
     {
-        RouteId = "route" + Random.Shared.Next(), // Forces a new route id each time GetRoutes is called.
-        ClusterId = "bttc-mainnet-archive-rpc",
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "bttc_mainnet_full_rpc",
         Match = new RouteMatch
         {
-            // Path or Hosts are required for each route. This catch-all pattern matches all request paths.
-            Path = "/bttc-mainnet-archive-rpc/{**catch-all}"
+            
+            Path = "/bttc_mainnet_full_rpc/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/bttc-mainnet-archive-rpc")
+    }.WithTransformPathRemovePrefix(prefix: "/bttc_mainnet_full_rpc"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "bttc_mainnet_full_ws",
+        Match = new RouteMatch
+        {
+            
+            Path = "/bttc_mainnet_full_ws/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/bttc_mainnet_full_ws"),
+    //BTTC ARCHIVE
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "bttc_mainnet_archive_rpc",
+        Match = new RouteMatch
+        {
+            
+            Path = "/bttc_mainnet_archive_rpc/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/bttc_mainnet_archive_rpc"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "bttc_mainnet_archive_ws",
+        Match = new RouteMatch
+        {
+            
+            Path = "/bttc_mainnet_archive_ws/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/bttc_mainnet_archive_ws"),
+    //Optimism
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_rpc_1",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_rpc_1/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_rpc_1"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_ws_1",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_ws_1/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_ws_1"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_rpc_2",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_rpc_2/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_rpc_2"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_ws_2",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_ws_2/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_ws_2"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_rpc_3",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_rpc_3/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_rpc_3"),
+    new RouteConfig()
+    {
+        RouteId = "route" + Random.Shared.Next(), 
+        ClusterId = "optimism_mainnet_archive_ws_3",
+        Match = new RouteMatch
+        {
+            
+            Path = "/optimism_mainnet_archive_ws_3/{*any}"
+        }
+    }.WithTransformPathRemovePrefix(prefix: "/optimism_mainnet_archive_ws_3")
 };
 
 var clusters = new[]
 {
     new ClusterConfig()
     {
-        ClusterId = "tron-mainnet-archive-rpc",
-        SessionAffinity = new SessionAffinityConfig { Enabled = true, Policy = "Cookie", AffinityKeyName = ".Yarp.ReverseProxy.Affinity" },
+        ClusterId = "tron_mainnet_archive_rpc",
+        
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
             { "node1", new DestinationConfig() { Address = "http://localhost:22311/" } },
@@ -53,8 +148,17 @@ var clusters = new[]
     },
     new ClusterConfig()
     {
-        ClusterId = "tron-mainnet-archive-solidity-rpc",
-        SessionAffinity = new SessionAffinityConfig { Enabled = true, Policy = "Cookie", AffinityKeyName = ".Yarp.ReverseProxy.Affinity" },
+        ClusterId = "tron_mainnet_archive_grpc",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22311/" } },
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "tron_mainnet_archive_solidity_rpc",
+        
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
             { "node1", new DestinationConfig() { Address = "http://localhost:22312/" } }
@@ -62,11 +166,92 @@ var clusters = new[]
     },
     new ClusterConfig()
     {
-        ClusterId = "bttc-mainnet-archive-rpc",
-        SessionAffinity = new SessionAffinityConfig { Enabled = true, Policy = "Cookie", AffinityKeyName = ".Yarp.ReverseProxy.Affinity" },
+        ClusterId = "bttc_mainnet_full_rpc",
+        
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
             { "node1", new DestinationConfig() { Address = "http://localhost:22511/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "bttc_mainnet_full_ws",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22512/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "bttc_mainnet_archive_rpc",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:32511/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "bttc_mainnet_archive_ws",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:32512/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_rpc_1",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22211/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_ws_1",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22212/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_rpc_2",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22221/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_ws_2",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22222/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_rpc_3",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22231/" } }
+        }
+    },
+    new ClusterConfig()
+    {
+        ClusterId = "optimism_mainnet_archive_ws_3",
+        
+        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "node1", new DestinationConfig() { Address = "http://localhost:22232/" } }
         }
     }
 
@@ -84,6 +269,9 @@ builder.WebHost.UseKestrel(so =>
     so.Configure(kestrelSection);
 
 });
+
+Console.WriteLine(JsonSerializer.Serialize(routes));
+Console.WriteLine(JsonSerializer.Serialize(clusters));
 
 var app = builder.Build();
 app.UseRouting();
