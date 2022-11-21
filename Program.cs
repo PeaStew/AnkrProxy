@@ -15,30 +15,30 @@ var routes = new[]
     new RouteConfig()
     {
         RouteId = "route" + Random.Shared.Next(),
-        ClusterId = "aptos_aptos_testnet_full_http_1",
+        ClusterId = "aptos_aptos_mainnet_full_http_1",
         Match = new RouteMatch
         {
-            Path = "/aptos_aptos_testnet_full_http_1/{*any}"
+            Path = "/aptos_aptos_mainnet_full_http_1/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_testnet_full_http_1"),
+    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_mainnet_full_http_1"),
     new RouteConfig()
     {
         RouteId = "route" + Random.Shared.Next(),
-        ClusterId = "aptos_aptos_testnet_full_http_2",
+        ClusterId = "aptos_aptos_mainnet_full_http_2",
         Match = new RouteMatch
         {
-            Path = "/aptos_aptos_testnet_full_http_2/{*any}"
+            Path = "/aptos_aptos_mainnet_full_http_2/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_testnet_full_http_2"),
+    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_mainnet_full_http_2"),
     new RouteConfig()
     {
         RouteId = "route" + Random.Shared.Next(),
-        ClusterId = "aptos_aptos_testnet_full_http_3",
+        ClusterId = "aptos_aptos_mainnet_full_http_3",
         Match = new RouteMatch
         {
-            Path = "/aptos_aptos_testnet_full_http_3/{*any}"
+            Path = "/aptos_aptos_mainnet_full_http_3/{*any}"
         }
-    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_testnet_full_http_3")
+    }.WithTransformPathRemovePrefix(prefix: "/aptos_aptos_mainnet_full_http_3")
 
 };
 
@@ -46,29 +46,29 @@ var clusters = new[]
 {
     new ClusterConfig()
     {
-        ClusterId = "aptos_aptos_testnet_full_http_1",
+        ClusterId = "aptos_aptos_mainnet_full_http_1",
 
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
-            { "node1", new DestinationConfig() { Address = "http://localhost:26111/" } },
+            { "node1", new DestinationConfig() { Address = "http://localhost:26711/" } },
         }
     },
     new ClusterConfig()
     {
-        ClusterId = "aptos_aptos_testnet_full_http_2",
+        ClusterId = "aptos_aptos_mainnet_full_http_2",
 
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
-            { "node1", new DestinationConfig() { Address = "http://localhost:26121/" } },
+            { "node1", new DestinationConfig() { Address = "http://localhost:26721/" } },
         }
     },
     new ClusterConfig()
     {
-        ClusterId = "aptos_aptos_testnet_full_http_3",
+        ClusterId = "aptos_aptos_mainnet_full_http_3",
 
         Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
         {
-            { "node1", new DestinationConfig() { Address = "http://localhost:26131/" } },
+            { "node1", new DestinationConfig() { Address = "http://localhost:26731/" } },
         }
     }
 };
