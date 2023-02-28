@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj": {}
+    "C:\\Users\\peter\\source\\repos\\AnkrProxy\\AnkrProxy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj": {
+    "C:\\Users\\peter\\source\\repos\\AnkrProxy\\AnkrProxy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj",
+        "projectUniqueName": "C:\\Users\\peter\\source\\repos\\AnkrProxy\\AnkrProxy.csproj",
         "projectName": "AnkrProxy",
-        "projectPath": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\AnkrProxy.csproj",
+        "projectPath": "C:\\Users\\peter\\source\\repos\\AnkrProxy\\AnkrProxy.csproj",
         "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Source\\Repos\\AnkrProxy\\obj\\",
+        "outputPath": "C:\\Users\\peter\\source\\repos\\AnkrProxy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,7 +48,7 @@
           "dependencies": {
             "Yarp.ReverseProxy": {
               "target": "Package",
-              "version": "[1.1.1, )"
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.1.22431.12\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200-preview.22628.1\\RuntimeIdentifierGraph.json"
         }
       }
     }
